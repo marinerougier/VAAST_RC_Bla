@@ -765,7 +765,7 @@ if (is_compatible) {
     },
     on_finish: function () {
       saving_browser_events(completion = true);
-      window.location.href = "https://www.google.html?id=" + id + "&prolificID=" + 
+      window.location.href = "https://marinerougier.github.io/RC_Bla/RC.html?id=" + id + "&prolificID=" + 
       prolificID + "&vaast_condition_approach=" + vaast_condition_approach;
     }
   });
