@@ -172,7 +172,9 @@ var faces = [
   "stimuli/n4_BM210_Blue.png",
   "stimuli/n4_BM210_Yellow.png",
   "stimuli/n4_BM251_Blue.png",
-  "stimuli/n4_BM251_Yellow.png"
+  "stimuli/n4_BM251_Yellow.png", 
+  "stimuli/n2_BM239_Blue_example.png",
+  "stimuli/n3_BM214_Yellow_example.png"
 ];
 
 preloadimages.push(faces);
@@ -445,9 +447,12 @@ var Gene_Instr = {
     "<p class='instructions'>In this study, you will have to " +
     "perform two categorization tasks: " +
     "<br>" +
-    "- The Video Game task (approx. 15 min)" +
+    "- The Video Game task (approx. 10-15 min)" +
     "<br>" +
-    "- The Categorization task (approx. 15 min)</p>" +
+    "- The Categorization task (approx. 10-15 min)" +
+    "<br>" +
+    "<br>" +
+    "To finish, you will have to fill in a few questionnaires (approx. 5 min). </p>" +
     "<br>" +
     "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
     " continue.</p>",
@@ -474,7 +479,8 @@ var vaast_instructions_2 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
-    "<p class='instructions'>The faces that you saw previously (see examples below) will be displayed in this environment. </p>" +
+    "<p class='instructions'>A series of faces will be displayed in this environment. "+
+    "Note that these faces have been deliberately blurred. Here are two examples of faces that will be displayed: </p>" +
     "<br>" +
     "<img src = 'stimuli/n2_BM239_Blue_example.png'>" +
     "                              " +
@@ -483,7 +489,7 @@ var vaast_instructions_2 = {
     "<br>" +
     "<p class='instructions'>Your task will be to categorize these faces (by moving forward or backward) as fast as possible. " +
     "Specifically, you will have to categorize these faces based on their background color (i.e., blue or yellow). " +
-    "More specific instructions will follow.</p>" +
+    "More instructions will follow.</p>" +
     "<br>" +
     "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
     " continue.</p>",
@@ -501,8 +507,8 @@ var vaast_instructions_2_bis = {
     "<br>" +
     "<br></p>" +
     "<br>" +
-    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour" +
-    " continuer.</p>",
+    "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
+    " continue.</p>",
   choices: [32]
 };
 
@@ -542,8 +548,8 @@ var vaast_instructions_4 = {
     "A red cross will appear if your response is incorrect. </p>" +
     "<br>" +
     "<br>" +
-    "<p class = 'continue-instructions'>Press <strong>enter</strong> to " +
-    "begin the training.</p>",
+    "<p class = 'continue-instructions'>Press <strong>ENTER</strong> to " +
+    "start the task.</p>",
   choices: [13]
 };
 
