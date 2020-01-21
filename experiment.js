@@ -75,7 +75,7 @@ var preloadimages = [];
 // This section ensure that we don't lose data. Anytime the 
 // client is disconnected, an alert appears onscreen
 var connectedRef = firebase.database().ref(".info/connected");
-var connection = firebase.database().ref("VAAST_3appuis_Black/" + id + "/")
+var connection = firebase.database().ref("VAAST_3appuis_BW/" + id + "/")
 var dialog = undefined;
 var first_connection = true;
 
@@ -173,6 +173,23 @@ var faces = [
   "stimuli/n4_BM210_Yellow.png",
   "stimuli/n4_BM251_Blue.png",
   "stimuli/n4_BM251_Yellow.png", 
+
+  "stimuli/n-1_wm202_blue.png", 
+  "stimuli/n-1_wm202_yellow.png", 
+  "stimuli/n-1_wm218_blue.png", 
+  "stimuli/n-1_wm218_yellow.png", 
+  "stimuli/n-1_wm223_blue.png", 
+  "stimuli/n-1_wm223_yellow.png", 
+  "stimuli/n-1_wm257_blue.png", 
+  "stimuli/n-1_wm257_yellow.png", 
+  "stimuli/n0_wm002_blue.png", 
+  "stimuli/n0_wm002_yellow.png", 
+  "stimuli/n0_wm022_blue.png", 
+  "stimuli/n0_wm022_yellow.png", 
+  "stimuli/n0_wm028_blue.png", 
+  "stimuli/n0_wm028_yellow.png", 
+  "stimuli/n0_wm253_blue.png", 
+  "stimuli/n0_wm253_yellow.png", 
   "stimuli/n2_BM239_Blue_example.png",
   "stimuli/n3_BM214_Yellow_example.png"
 ];
@@ -213,6 +230,14 @@ switch (vaast_condition_approach) {
 var vaast_stim_training = [];
 
 var vaast_stim = [
+  { movement: movement_blue, group: "blue", level: "n-1", img: 'wm202', stimulus: 'stimuli/n-1_wm202_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n-1", img: 'wm218', stimulus: 'stimuli/n-1_wm218_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n-1", img: 'wm223', stimulus: 'stimuli/n-1_wm223_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n-1", img: 'wm257', stimulus: 'stimuli/n-1_wm257_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n0", img: 'wm002', stimulus: 'stimuli/n0_wm002_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n0", img: 'wm022', stimulus: 'stimuli/n0_wm022_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n0", img: 'wm028', stimulus: 'stimuli/n0_wm028_blue.png' },
+  { movement: movement_blue, group: "blue", level: "n0", img: 'wm253', stimulus: 'stimuli/n0_wm253_blue.png' },
   { movement: movement_blue, group: "blue", level: "n1", img: 'bm027', stimulus: 'stimuli/n1_bm027_Blue.png' },
   { movement: movement_blue, group: "blue", level: "n1", img: 'bm044', stimulus: 'stimuli/n1_bm044_Blue.png' },
   { movement: movement_blue, group: "blue", level: "n1", img: 'bm221', stimulus: 'stimuli/n1_bm221_Blue.png' },
@@ -229,6 +254,14 @@ var vaast_stim = [
   { movement: movement_blue, group: "blue", level: "n4", img: 'BM045', stimulus: 'stimuli/n4_BM045_Blue.png' },
   { movement: movement_blue, group: "blue", level: "n4", img: 'BM210', stimulus: 'stimuli/n4_BM210_Blue.png' },
   { movement: movement_blue, group: "blue", level: "n4", img: 'BM251', stimulus: 'stimuli/n4_BM251_Blue.png' },
+  { movement: movement_yellow, group: "yellow", level: "n-1", img: 'wm202', stimulus: 'stimuli/n-1_wm202_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n-1", img: 'wm218', stimulus: 'stimuli/n-1_wm218_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n-1", img: 'wm223', stimulus: 'stimuli/n-1_wm223_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n-1", img: 'wm257', stimulus: 'stimuli/n-1_wm257_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n0", img: 'wm002', stimulus: 'stimuli/n0_wm002_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n0", img: 'wm022', stimulus: 'stimuli/n0_wm022_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n0", img: 'wm028', stimulus: 'stimuli/n0_wm028_yellow.png' },
+  { movement: movement_yellow, group: "yellow", level: "n0", img: 'wm253', stimulus: 'stimuli/n0_wm253_yellow.png' },
   { movement: movement_yellow, group: "yellow", level: "n1", img: 'bm027', stimulus: 'stimuli/n1_bm027_Yellow.png' },
   { movement: movement_yellow, group: "yellow", level: "n1", img: 'bm044', stimulus: 'stimuli/n1_bm044_Yellow.png' },
   { movement: movement_yellow, group: "yellow", level: "n1", img: 'bm221', stimulus: 'stimuli/n1_bm221_Yellow.png' },
@@ -247,6 +280,13 @@ var vaast_stim = [
   { movement: movement_yellow, group: "yellow", level: "n4", img: 'BM251', stimulus: 'stimuli/n4_BM251_Yellow.png' },
 ];
 
+var vaast_stim_nmin1_b = _.sampleSize(_.filter(vaast_stim, { 'group': 'blue', 'level': 'n-1' }), 2);
+var vaast_stim_nmin1_y = _.filter(vaast_stim, function (e) { return e.group == 'yellow' & e.level == 'n-1' & e.img != vaast_stim_nmin1_b[0].img & e.img != vaast_stim_nmin1_b[1].img });
+
+var vaast_stim_n0_b = _.sampleSize(_.filter(vaast_stim, { 'group': 'blue', 'level': 'n0' }), 2);
+var vaast_stim_n0_y = _.filter(vaast_stim, function (e) { return e.group == 'yellow' & e.level == 'n0' & e.img != vaast_stim_n0_b[0].img & e.img != vaast_stim_n0_b[1].img });
+
+
 var vaast_stim_n1_b = _.sampleSize(_.filter(vaast_stim, { 'group': 'blue', 'level': 'n1' }), 2);
 var vaast_stim_n1_y = _.filter(vaast_stim, function (e) { return e.group == 'yellow' & e.level == 'n1' & e.img != vaast_stim_n1_b[0].img & e.img != vaast_stim_n1_b[1].img });
 
@@ -259,6 +299,10 @@ var vaast_stim_n3_y = _.filter(vaast_stim, function (e) { return e.group == 'yel
 var vaast_stim_n4_b = _.sampleSize(_.filter(vaast_stim, { 'group': 'blue', 'level': 'n4' }), 2);
 var vaast_stim_n4_y = _.filter(vaast_stim, function (e) { return e.group == 'yellow' & e.level == 'n4' & e.img != vaast_stim_n4_b[0].img & e.img != vaast_stim_n4_b[1].img });
 
+vaast_stim_training.push(vaast_stim_nmin1_b);
+vaast_stim_training.push(vaast_stim_nmin1_y);
+vaast_stim_training.push(vaast_stim_n0_b);
+vaast_stim_training.push(vaast_stim_n0_y);
 vaast_stim_training.push(vaast_stim_n1_b);
 vaast_stim_training.push(vaast_stim_n1_y);
 vaast_stim_training.push(vaast_stim_n2_b);
@@ -346,7 +390,7 @@ var next_position = function () {
 // init ---------------------------------------------------------------------------------
 var saving_id = function () {
   database
-    .ref("participant_id_Black/")
+    .ref("participant_id_BW/")
     .push()
     .set({
       id: id,
@@ -359,7 +403,7 @@ var saving_id = function () {
 // vaast trial --------------------------------------------------------------------------
 var saving_vaast_trial = function () {
   database
-    .ref("vaast_trial_Black/").
+    .ref("vaast_trial_BW/").
     push()
     .set({
       id: id,
@@ -375,7 +419,7 @@ var saving_vaast_trial = function () {
 
 var saving_browser_events = function (completion) {
   database
-    .ref("browser_event_Black/")
+    .ref("browser_event_BW/")
     .push()
     .set({
       id: id,
@@ -695,7 +739,7 @@ var vaast_training = {
     save_vaast_trial
   ],
   timeline_variables: vaast_stim_training,
-  repetitions: 12, //here, put 12 for 192 trials
+  repetitions: 7, //here, put 12 for 192 trials
   randomize_order: true,
   data: {
     phase: "training",
