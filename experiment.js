@@ -739,7 +739,7 @@ var vaast_training = {
     save_vaast_trial
   ],
   timeline_variables: vaast_stim_training,
-  repetitions: 7, //here, put 12 for 192 trials
+  repetitions: 1, //here, put 7 !!!
   randomize_order: true,
   data: {
     phase: "training",
