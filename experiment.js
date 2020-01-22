@@ -190,8 +190,8 @@ var faces = [
   "stimuli/n0_wm028_yellow.png", 
   "stimuli/n0_wm253_blue.png", 
   "stimuli/n0_wm253_yellow.png", 
-  "stimuli/n2_BM239_Blue_example.png",
-  "stimuli/n3_BM214_Yellow_example.png"
+  "stimuli/n1_bm222_Blue_example.png",
+  "stimuli/n1_bm027_Yellow_example.png"
 ];
 
 preloadimages.push(faces);
@@ -526,9 +526,9 @@ var vaast_instructions_2 = {
     "<p class='instructions'>A series of faces will be displayed in this environment. "+
     "Note that these faces have been deliberately blurred. Here are two examples of faces that will be displayed: </p>" +
     "<br>" +
-    "<img src = 'stimuli/n2_BM239_Blue_example.png'>" +
+    "<img src = 'stimuli/n1_bm222_Blue_example.png'>" +
     "                              " +
-    "<img src = 'stimuli/n3_BM214_Yellow_example.png'>" +
+    "<img src = 'stimuli/n1_bm027_Yellow_example.png'>" +
     "<br>" +
     "<br>" +
     "<p class='instructions'>Your task will be to categorize these faces (by moving forward or backward) as fast as possible. " +
@@ -739,7 +739,7 @@ var vaast_training = {
     save_vaast_trial
   ],
   timeline_variables: vaast_stim_training,
-  repetitions: 1, //here, put 7 !!!
+  repetitions: 7, //here, put 7 !!!
   randomize_order: true,
   data: {
     phase: "training",
